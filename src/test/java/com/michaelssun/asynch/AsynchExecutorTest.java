@@ -3,8 +3,11 @@ package com.michaelssun.asynch;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AsynchExecutorTest {
+	private static Logger logger = LoggerFactory.getLogger(AsynchExecutorTest.class);
 
 	@Before
 	public void before() {
@@ -29,7 +32,7 @@ public class AsynchExecutorTest {
 
 		class MyRunnable extends ObjectRunnable {
 			public void run() {
-				System.out.println(Thread.currentThread().getName() + "=" + getObject());
+				logger.debug(Thread.currentThread().getName() + "=" + getObject());
 			}
 
 		}
